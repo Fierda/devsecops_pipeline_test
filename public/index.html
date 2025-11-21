@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Old NestJS FE</title>
+  </head>
+  <body>
+    <h1>Frontend Served by NestJS v7</h1>
+    <p id="msg">Loading...</p>
+
+    <script>
+      fetch("/api/msg")
+        .then((r) => r.json())
+        .then((j) => (document.getElementById("msg").textContent = j.message))
+        .catch((e) => console.error(e));
+    </script>
+  </body>
+</html>
